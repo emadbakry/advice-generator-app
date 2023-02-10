@@ -1,38 +1,151 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&display=swap');
+
+.section {
+  background-color: hsl(217, 19%, 38%);
   text-align: center;
+  margin: auto 10%;
+  border-radius: 12px;
+  /* position: relative; */
+  padding: 30px;
+  padding-bottom: 0px;
+  margin-top: 100px;
+  color: #fff;
+  font-family: 'Manrope', sans-serif;
+}
+h1 {
+  margin: 0;
+  color: hsl(150, 100%, 66%);
+  letter-spacing: 3px;
+}
+.desk_img {
+  display: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+#advice {
+  min-height: 100px;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.line img {
+  margin: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+.generate_advice > button {
+  position: relative;
+  bottom: -20px;
+  border: none;
+  background-color: hsl(150, 100%, 66%);
+  border-radius: 100px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.generate_advice > button > img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 26px;
+  max-width: 80%;
+}
+
+.line {
+  position: relative;
+}
+.line:after,.line:before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 42%;
+  background-color: #fff;
+  left: 0px;
+  top: 44%;
+}
+
+.line:after {
+  left: auto;
+  right: 0;
+}
+
+/* animation */
+.generate_advice > button:hover {
+  transition: 0.6s;
+  transform: rotate(360deg);
+}
+@media only screen and (min-width:768px) {
+  .desk_img {
+    display: block;
+  }
+  .mob_img {
+    display: none;
+  }
+  .generate_advice > button {
+    width: 80px;
+    height: 80px;
+  }
+  .generate_advice > button > img {
+    width: 40px;
+  }
+  #advice {
+    font-size: 2rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#advice:after {
+  content: close-quote;
+}
+#advice::before {
+  content: open-quote;
+}
+.advice_container {
+  position: relative;
+}
+.advice_container:after {
+  display: none;
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url(./images/loading-process-svgrepo-com.svg);
+  background-size: 50px auto;
+  background-repeat: no-repeat;
+  /* background-color: hsl(217, 19%, 38%); */
+  border-radius: 4px;
+  left: 0;
+  top: 0;
+  background-position: center;
+  animation: rotate 2s linear infinite;
+}
+.loading .advice_container:after {
+  display: block;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
+
+.attr{
+  margin: 50px auto;
+  text-align: center;
+}
+.attr a{
+  text-decoration: none;
+  font-weight: 600;
+  color: blueviolet;
+}
+
+
+
+/* ready, it only needs to be uploaded to github then to twitter, you should post about it, think of it */
